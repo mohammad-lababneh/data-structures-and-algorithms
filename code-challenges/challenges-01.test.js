@@ -99,41 +99,26 @@ Within the addNumbers function, invoke the callback function as many times as ne
 
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
-const addValues = (arr, value) => {
-  arr.push(value);
+const addValues = (arr1, value) => {
+  arr1.push(value);
+  // console.log(arr);
 };
 
-let array = [];
-for (let i = 0; i < times; i++) {
+const addNumbers = (num, arr, times, callback) => {
 
-  let element = array[i];
-  const addNumbers = (num, arr, times, callback) => {
-    array.push(num);
-
-    return(num , arr, times, callback);
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
   };
-
-  console.log(addNumbers(1,5,3,addValues));
-  console.log(array);
+  return arr;
 }
+console.log(addNumbers(1, [], 5, addValues));
 
 
-
-
-
-
-
-describe('Testing challenge 5', () => {
-  test('It should add the number 8 to the array five times', () => {
-    expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
-    expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
-  });
-});
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 6
 
-Write a function named createList that takes in an array of the current store intentory.
+Write a function named createList that takes in an array of the current store inventory.
 
 The inventory is formatted like this:
 [
@@ -147,19 +132,33 @@ The inventory is formatted like this:
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
-const createList = (availableItems) => {
+// const createList = (availableItems) => {
 
-};
+//  let inventory = [
+//     { name: 'apples', available: true },
+//     { name: 'pears', available: true },
+//     { name: 'oranges', available: false },
+//     { name: 'bananas', available: true },
+//     { name: 'blueberries', available: false }
+//   ]
 
+// };
+let newArray = [];
 const createList = (availableItems) => {
-  let list = [];
-  availableItems.forEach((item) => {
+  let list = [
+    { name: 'apples', available: true },
+    { name: 'pears', available: true },
+    { name: 'oranges', available: false },
+    { name: 'bananas', available: true },
+    { name: 'blueberries', available: false }];
+  list.forEach((item) => {
     if (item.available) {
-      list.push(item.name);
+      newArray.push(item.name);
     }
   })
-  return list;
+  return newArray;
 };
+console.log(createList(newArray));
 
 
 
@@ -176,10 +175,25 @@ Iterate over the array using forEach to determine the output based on several ru
 
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
-
+let output = [];
 const fizzbuzz = (arr) => {
-  // Solution code here...
+//  let array = [1,2,3,4,5,6,7,8,9,15,45,30];
+ arr.forEach(element => {
+   if(arr % 3){
+     output.push('Fizz')
+    };
+    if(arr % 5){
+      output.push('Buzz')
+     };
+     if(arr % 3 && arr % 5 ){
+      output.push('Fizz Buzz')
+     };
+ });
+ return arr ;
+ 
 };
+fizzbuzz([7]);
+console.log(output);
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
