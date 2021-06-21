@@ -71,11 +71,9 @@ const greeting = (arr) => {
   let newArray = [];
   arr.forEach(element => {
     newArray.push((element + '!').toUpperCase());
-
   });
   return newArray
 };
-
 
 const speaker = (arr, callback) => {
   let localArray = [];
@@ -192,17 +190,17 @@ const fizzbuzz = (arr) => {
   let output = [];
 
   arr.forEach(element => {
-    if (element % 3) {
+    if (element % 3 == 0) {
       output.push(`Fizz`)
-    };
-    if (element % 5) {
+    }
+    if (element % 5 == 0) {
       output.push('Buzz')
-    };
-    if (element % 3 && element % 5) {
+    }
+    if (element % 3 == 0 && element % 5 == 0) {
       output.push('Fizz Buzz')
-    };
-    
-// else {output.push(element)};
+    }
+else {output.push(element)};
+
 return output ;
   });
 };
