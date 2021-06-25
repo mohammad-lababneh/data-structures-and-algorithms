@@ -47,7 +47,7 @@ const containsAnd = (arr) => {
 
   arr.filter(element => {
 
-   if (arr[element].split("and ")) 
+   if (element.includes('and')) 
 
     newArray.push(element );
 
@@ -66,7 +66,7 @@ const oddValues = (arr) => {
   let newArray=[];
 
   arr.filter(element => {
-   if(element %2 !==0)
+   if(element %2 !== 0)
 
     newArray.push(element);
   });
@@ -82,21 +82,12 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  let array1=[];
-  let array2=[];
   let newArray=[];
 
-  forbiddenValues.filter(element1 => {
-   array1.push(element1);
-  });
 
-  arr.filter(element2=> {
-    array2.push(element2);
-   });
-
-   arr.filter(element3 => {
-if (element1 !== element2) {
-  newArray.push(element3);
+  arr.filter(element => {
+if (!forbiddenValues.includes(element)) {
+  newArray.push(element);
 }
     
    });
