@@ -12,12 +12,11 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
- let newArray = [];
-
- people.map( (person) => {
-  newArray.push( (person.firstName +' '+ person.lastName))
-});
-return newArray
+  let newArray = [];
+  people.map((p) => {
+    newArray.push((p.firstName + ' ' + p.lastName))
+  });
+  return newArray
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,15 +27,12 @@ Write a function named addValues that, given an array of numbers as input, uses 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
- let newArray = [];
- arr.reduce((accumulator,value,index) => {
-accumulator = accumulator + value;
-
-newArray.push(accumulator);
- },0)
- return newArray;
+  let newArr = arr.reduce((acc, value) => {
+    acc = acc + value;
+    return acc;
+  }, 0);
+  return newArr;
 };
-
 
 // let numbers = [1,2,3,4];
 // let sum = numbers.reduce( function(accumulator,value,idx) {
@@ -56,15 +52,12 @@ Write a function named addPurchases that, given an array of objects as input, us
 }
 
 ------------------------------------------------------------------------------------------------ */
-
 const addPurchases = (arr) => {
-  let newArray = [];
- arr.reduce((accumulator,value,index) => {
-accumulator = purchasePrice + value.purchasePrice;
-
-newArray.push(accumulator);
- },0)
- return newArray;
+  let newArr = arr.reduce((acc, value) => {
+    acc = acc + value.purchasePrice;
+    return acc;
+  }, 0);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,8 +68,13 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
+
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  let newArr = arr.reduce((acc, value, index) => {
+    acc = arr.length;
+    return acc;
+  }, 0);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -103,7 +101,8 @@ let starWarsData = [{
   skin_color: 'gold',
   eye_color: 'yellow',
   birth_year: '112BBY',
-  gender: 'n/a'},
+  gender: 'n/a'
+},
 {
   name: 'R2-D2',
   height: '96',
@@ -136,7 +135,11 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  let newArr = arr.reduce((acc, value, index) => {
+    acc[index] = value.name;
+    return acc;
+  }, []);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -148,7 +151,12 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  let strArr = str.split('');
+  let newArr = strArr.reduce((acc, value, index) => {
+    acc = acc + strArr[(strArr.length) - 1 - index];
+    return acc;
+  }, '');
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -324,7 +332,7 @@ describe('Testing challenge 2', () => {
 
 describe('Testing challenge 3', () => {
   test('It should add the purchase price', () => {
-    expect(addPurchases([{item: 'switch', purchasePrice: 399}, {item: 'toothpaste', purchasePrice: 2}])).toStrictEqual(401);
+    expect(addPurchases([{ item: 'switch', purchasePrice: 399 }, { item: 'toothpaste', purchasePrice: 2 }])).toStrictEqual(401);
     expect(addPurchases([])).toStrictEqual(0);
   });
 });
@@ -337,7 +345,7 @@ describe('Testing challenge 4', () => {
 
 describe('Testing challenge 5', () => {
   test('It should return an array continaing the names of the characters', () => {
-    expect(returnNames(starWarsData)).toStrictEqual([ 'Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa' ]);
+    expect(returnNames(starWarsData)).toStrictEqual(['Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa']);
     expect(returnNames(starWarsData).length).toStrictEqual(5);
   });
 });
@@ -356,7 +364,7 @@ xdescribe('Testing challenge 7', () => {
 
 xdescribe('Testing challenge 8', () => {
   test('It should return the average of the numbers in the array', () => {
-    expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
+    expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85])).toStrictEqual(64);
   });
 });
 
@@ -374,7 +382,7 @@ xdescribe('Testing challenge 10', () => {
 
 xdescribe('Testing challenge 11', () => {
   test('It should return an array containing the names of the children', () => {
-    expect(extractChildren(characters)).toStrictEqual([ 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras' ]);
+    expect(extractChildren(characters)).toStrictEqual(['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras']);
     expect(extractChildren(characters).length).toStrictEqual(10);
   });
 });
