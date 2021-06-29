@@ -10,6 +10,9 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 
 
 
+
+
+
 function upper(str) {
   return str.toUpperCase();
 }
@@ -19,13 +22,21 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
+
+  let newArr = arr.map(item => {
+
+    return callback(item);
+
   // Solution code here...
   let newArr=[];
   arr.forEach(element => {
     newArr.push(callback(element));
+
   });
   return newArr;
 };
+
+
 
 
 
@@ -41,6 +52,7 @@ const addOne = (arr) => {
 
 
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -48,6 +60,15 @@ Write a function named `addExclamation` that takes an array of strings, and retu
 
 Use `forEach` to loop over the input array. Modify each string, and add the updated value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
+
+
+const addValues = (arr) => {
+  // Solution code here...
+  let sum=arr.reduce((acc,val,ind)=>{
+    acc=acc+val;
+    return acc;
+  },0);
+  return sum;
 
 
 const sortNames = (arr) => {
@@ -68,6 +89,7 @@ const addExclamation = (arr) => {
   });
   return newArray
 
+
 };
 
 
@@ -82,6 +104,8 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 
 
+
+
 const sortNumbers = (arr) => {
   // Solution code here...
   let newArr=arr.sort((a,b)=> {
@@ -91,6 +115,8 @@ const sortNumbers = (arr) => {
     return -1;
   })
   return newArr;
+
+
 
 const allUpperCase = (arr) => {
   let newArray = [];
@@ -117,6 +143,9 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 
 
+
+
+
 const sortBackwards = (arr) => {
   // Solution code here...
   let newArr=arr.sort((a,b)=> {
@@ -126,6 +155,8 @@ const sortBackwards = (arr) => {
     return 1;
   })
   return newArr;
+
+
 
 const greeting = (arr) => {
   let newArray = [];
@@ -170,6 +201,7 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
+
 const alphabetize = (arr) => {
   // Solution code here...
   let newArr=arr.sort((a,b)=> {
@@ -180,6 +212,7 @@ const alphabetize = (arr) => {
   })
   return newArr;
 };
+
 
 const addValues = (arr1, value) => {
   arr1.push(value);
@@ -237,6 +270,7 @@ const sortByPrice = (arr) => {
   })
   return newArr;
 };
+
 
 const createList = (availableItems) => {
   let newArray = [];
