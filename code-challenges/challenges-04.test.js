@@ -12,18 +12,18 @@ Push each updated animal string into the new array. Return the new array.
 HINT: Look at the tests to see how the callback functions are used.
 
 ------------------------------------------------------------------------------------------------ */
-
 function upper(str) {
   return str.toUpperCase();
 }
-
 function lower(str) {
   return str.toLowerCase();
 }
 const updateAnimal = (arr, callback) => {
-  // Solution code here...
+  let newArr = arr.map(item => {
+    return callback(item);
+  });
+  return newArr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -33,9 +33,17 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
-  // Solution code here...
+  arr.sort((z,b)=>{
+    if (z>b) {
+      return 1;
+    } else if (z<b) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -43,9 +51,17 @@ Write a function called sortNumbers that takes an array of numbers and sorts the
 
 HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
-
 const sortNumbers = (arr) => {
-  // Solution code here...
+  arr.sort((z,y)=>{
+    if (z>y) {
+      return 1;
+    } else if(z<y){
+      return -1;
+    }else{
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,7 +73,16 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
-  // Solution code here...
+  arr.sort((z,y)=>{
+    if (z<y) {
+      return 1;
+    } else if(z>y){
+      return -1;
+    }else{
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,11 +94,18 @@ In this alphabetization, capital letters come before lower case letters.
 
 For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
-
 const alphabetize = (arr) => {
-  // Solution code here...
+  arr.sort((z,y)=>{
+    if (z>y) {
+      return 1;
+    } else if(z<y){
+      return -1;
+    }else{
+      return 0;
+    }
+  });
+  return arr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -88,7 +120,16 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  arr.sort((z,y)=>{
+    if (z.price>y.price) {
+      return 1;
+    } else if(z.price<y.price){
+      return -1;
+    }else{
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
