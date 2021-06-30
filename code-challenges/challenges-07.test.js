@@ -25,17 +25,26 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
-}
+  starWarsArr.sort((a, b) => {
+    if (parseInt(a.height) < parseInt(b.height)) {
+      return 1;
+    } else if (parseInt(a.height) > parseInt(b.height)) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  return starWarsArr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
 Write a function named removeThree that takes an index and an array. The function should removes three items in the array starting with the value at the index. 
 ------------------------------------------------------------------------------------------------ */
-
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  arr.splice(idx, 3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +54,8 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
+  let newArr = arr.join(' ');
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +73,15 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+
+  let strArr = str.split('');
+  strArr.forEach((item, index) => {
+    let deletedArr = strArr.slice(index, strArr.length);
+    let joinedArr = deletedArr.join('');
+    result.push(joinedArr);
+
+  });
+  result.push('');
   return result;
 };
 
@@ -76,7 +94,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  let newArr = arr.split('');
+  return newArr;
 };
 
 
@@ -91,6 +110,7 @@ Use slice for this function, maybe more than once. The Array.indexOf() method ma
 
 Do not use split for this function.
 ------------------------------------------------------------------------------------------------ */
+
 
 const gruffaloCrumble = {
   name: 'How to make a Gruffalo Crumble',
@@ -123,9 +143,16 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let newArr = recipe.ingredients;
+  newArr.map((item, index) => {
+    let splittedItem = item.split(' ');
+    let slicedName = splittedItem.slice(2, splittedItem.length);
+    let joinedItem = slicedName.join(' ');
+    result.push(joinedItem);
+  });
   return result;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
