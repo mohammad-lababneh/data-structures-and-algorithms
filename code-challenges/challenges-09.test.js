@@ -41,8 +41,10 @@ const courseInfo = {
 };
 
 const getCourseKeys = (Object1) => {
+
   
   let keyArray = Object.keys(Object1);
+
   return keyArray;
 };
 /* ------------------------------------------------------------------------------------------------
@@ -98,6 +100,7 @@ const updateNumbers = (object1) => {
   let objectArray = Object.entries(object1);
 
   objectArray.forEach(i => {
+    
 
     newArray.push(i.join(': '));
 
