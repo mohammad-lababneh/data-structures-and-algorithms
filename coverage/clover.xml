@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
+
 <coverage generated="1625598199718" clover="3.2.0">
   <project timestamp="1625598199719" name="All files">
-=======
 <coverage generated="1625084587893" clover="3.2.0">
   <project timestamp="1625084587893" name="All files">
+<coverage generated="1625592077263" clover="3.2.0">
+  <project timestamp="1625592077263" name="All files">
+<coverage generated="1625433950628" clover="3.2.0">
+  <project timestamp="1625433950628" name="All files">
+
+<coverage generated="1625431814996" clover="3.2.0">
+  <project timestamp="1625431814996" name="All files">
+
 <coverage generated="1625035820064" clover="3.2.0">
   <project timestamp="1625035820065" name="All files">
 
@@ -27,7 +34,6 @@
 
 
 
->>>>>>> 54507e992603d2031ac90252bf8c2dd66ff1ea44
     <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
   </project>
 </coverage>
