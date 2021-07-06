@@ -9,13 +9,20 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  let newArr = arr.reduce((acc, value) => {
-    if (value > acc) {
-      acc = value;
+
+  let newArray = arr.reduce((A, val) => {
+
+    if (val > A) {
+
+      A = val;
     }
-    return acc;
-  }, 0);
-  return newArr;
+
+    return A;
+
+  },
+
+  0);
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,14 +33,17 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
 const courseInfo = {
+
   name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
+
 };
 
-const getCourseKeys = (obj) => {
-  let keysArr = Object.keys(obj);
-  return keysArr;
+const getCourseKeys = (Object1) => {
+  
+  let keyArray = Object.keys(Object1);
+  return keyArray;
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -43,17 +53,23 @@ Write a function named checkValues that takes in an object and a value and retur
 
 ------------------------------------------------------------------------------------------------ */
 
-const checkValues = (obj, value) => {
-  let result;
-  let valuesArr = Object.values(obj);
-  valuesArr.forEach(item => {
-    if (item == value) {
-      result = true;
-    } else {
-      result = false;
+const checkValues = (Object1, val) => {
+
+  let res;
+
+  let valArray = Object.values(Object1);
+
+  valArray.forEach(i => {
+
+    if (i == val) {
+      res = true;
+
+    }
+     else {
+      res = false;
     }
   });
-  return result;
+  return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,13 +91,18 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => {
-  let newArr = [];
-  let objToArr = Object.entries(obj);
-  objToArr.forEach(item => {
-    newArr.push(item.join(': '));
+const updateNumbers = (object1) => {
+
+  let newArray = [];
+
+  let objectArray = Object.entries(object1);
+
+  objectArray.forEach(i => {
+
+    newArray.push(i.join(': '));
+
   });
-  return newArr;
+  return newArray;
 };
 
 
@@ -136,11 +157,16 @@ const characters = [
 ];
 
 const getHouses = (arr) => {
-  let houses = [];
-  arr.map(item => {
-    houses.push(item.house);
+
+  let house = [];
+
+  arr.map(i => {
+
+    house.push(i.house);
+    
   });
-  return houses;
+
+  return house;
 };
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -155,14 +181,19 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  let result;
-  let namesArr = [];
-  arr.map(item => {
-    if (item.name==character) {
-      if (item.children) {
-        result= true;
+
+  let val;
+
+  arr.map(i => {
+
+    if (i.name==character) {
+
+      if (i.children) {
+
+        val= true;
+
       }else{
-        result = false;
+        val = false;
       }
     }
 
@@ -170,7 +201,7 @@ const hasChildrenValues = (arr, character) => {
   });
 
 
-  return result;
+  return val;
 
 };
 /* ------------------------------------------------------------------------------------------------
