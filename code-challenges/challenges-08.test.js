@@ -9,6 +9,7 @@ Use the characters data below for all of the challenges except challenge 2 and 3
 Write a function named sortByChildren that sorts the characters below by the number of children in each house (fewest to most). If a house has the same number of children, sort alphabetically by house name.
 
 ------------------------------------------------------------------------------------------------ */
+
 let characters = [
   {
     name: 'Eddard',
@@ -16,36 +17,42 @@ let characters = [
     children: ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon'],
     house: 'Stark'
   },
+
   {
     name: 'Jon A.',
     spouse: 'Lysa',
     children: ['Robin'],
     house: 'Arryn'
   },
+
   {
     name: 'Cersei',
     spouse: 'Robert',
     children: ['Joffrey', 'Myrcella', 'Tommen'],
     house: 'Lannister'
   },
+
   {
     name: 'Daenarys',
     spouse: 'Khal Drogo',
     children: ['Drogon', 'Rhaegal', 'Viserion'],
     house: 'Targaryen'
   },
+
   {
     name: 'Mace',
     spouse: 'Alerie',
     children: ['Margaery', 'Loras'],
     house: 'Tyrell'
   },
+
   {
     name: 'Euron',
     spouse: null,
     children: [],
     house: 'Greyjoy'
   },
+
   {
     name: 'Jon S.',
     spouse: null,
@@ -55,19 +62,26 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  charArray.sort((a, b) => {
-    if (a.children.length > b.children.length) {
 
-      return 1;
-    } else if (a.children.length == b.children.length) {
-      let n = a.house.localeCompare(b.house);
-      return n;
-    } else if (a.children.length < b.children.length) {
-      return -1;
-    } else {
-      return 0;
+  charArray.sort((x, y) => {
+
+    if (x.children.length > y.children.length) {
+
+      return (1);
+
+    }
+     else if (x.children.length == y.children.length) {
+      let n = x.house.localeCompare(y.house);
+      return (n);
+    }
+     else if (x.children.length < y.children.length) {
+      return (-1);
+    } 
+    else {
+      return (0);
     }
   });
+
   return charArray;
 };
 
@@ -78,10 +92,14 @@ Write a function named containsW that takes in a string. This function should us
 
 ------------------------------------------------------------------------------------------------ */
 
-const containsW = (str) => {
-  let validate = /w/g;
-  let resuult = validate.test(str);
-  return resuult;
+const containsW = (string) => {
+
+  let date = /w/g;
+
+  let results = date.test(string);
+
+  return (results);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,10 +114,13 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
-const isNum = (input) => {
-  let validate = /[0-9]/g;
-  let result = validate.test(input);
-  return result;
+const isNum = (i) => {
+
+  let date = /[0-9]/g;
+
+  let results = date.test(i);
+
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,10 +129,13 @@ CHALLENGE 4
 Write a function named containsWorld that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains the word 'world' all in lower-case letters, and false if the input does not.
 
 ------------------------------------------------------------------------------------------------ */
-const containsWorld = (input) => {
-  let validate = /world/g;
-  let result = validate.test(input);
-  return result;
+const containsWorld = (i) => {
+
+  let data = /world/g;
+
+  let results = data.test(i);
+
+  return results;
 
 };
 
@@ -122,12 +146,15 @@ Write a function named isCapitalized that takes in a string. This function shoul
 
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
-const isCapitalized = (str) => {
+const isCapitalized = (string) => {
 
-  if(str.match(/\b[A-Z](\w)*/g)) {
-    return str.match(/\b[A-Z](\w)*/g);
+  if(string.match(/\b[A-Z](\w)*/g)) {
+
+    return string.match(/\b[A-Z](\w)*/g);
+
   }
   else {
+
     return [];
   }
 };
@@ -139,16 +166,24 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 
-const citiesAtoJ = (arr) => {
+const citiesAtoJ = (array) => {
 
   let newArray = [];
-  arr.map((item) => {
-    let regex = /^[A-J]/g;
-    let res = regex.test(item);
-    if (res) {
-      newArray.push(item);
+
+  array.map((i) => {
+
+    let rx = /^[A-J]/g;
+
+    let expression = rx.test(i);
+
+    if (expression) {
+
+      newArray.push(i);
+
     }
+
   });
+
   return newArray;
 
 };
